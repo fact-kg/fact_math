@@ -4,3 +4,6 @@
       - math/operation:
           arity:
             value: 2
+- has:
+    python_impl:
+      type: computer/sw/lang/python/operator/power

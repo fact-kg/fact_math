@@ -1,0 +1,4 @@
+- is: mathematical operation
+- has:
+    arity:
+      type: num

@@ -1,0 +1,6 @@
+- is:
+    type: math/operation
+    as:
+      - math/operation:
+          arity:
+            value: 2

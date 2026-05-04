@@ -1,0 +1,7 @@
+- is: mathematical expression
+- has:
+    expression_str:
+      type: str
+- has:
+    expression_yaml:
+      type: str

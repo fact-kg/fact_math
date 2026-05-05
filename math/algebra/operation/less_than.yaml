@@ -7,3 +7,6 @@
 - has:
     python_impl:
       type: computer/sw/lang/python/operator/less_than
+- has:
+    latex_impl:
+      type: computer/sw/lang/latex/operator/less_than

@@ -7,3 +7,6 @@
 - has:
     python_impl:
       type: computer/sw/lang/python/operator/equal
+- has:
+    latex_impl:
+      type: computer/sw/lang/latex/operator/equal

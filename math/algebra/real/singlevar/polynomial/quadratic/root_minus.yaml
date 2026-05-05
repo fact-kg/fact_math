@@ -1,0 +1,62 @@
+- is:
+    type: math/expression
+- has:
+    undefined_no_quadratic:
+      type: math/function/domain/undefined
+      value: |
+        math/algebra/operation/and:
+          - math/algebra/operation/equal:
+              - a
+              - 0
+          - math/algebra/operation/equal:
+              - b
+              - 0
+- has:
+    undefined_no_real_roots:
+      type: math/function/domain/undefined
+      value: |
+        math/algebra/operation/less_than:
+          - math/algebra/operation/subtract:
+              - math/algebra/operation/power:
+                  - b
+                  - 2
+              - math/algebra/operation/multiply:
+                  - math/algebra/operation/multiply:
+                      - 4
+                      - a
+                  - c
+          - 0
+- has:
+    expression_str:
+      type: str
+      value: "x = (-b - sqrt(b^2 - 4*a*c)) / (2*a)"
+- has:
+    a:
+      type: math/constant
+- has:
+    b:
+      type: math/constant
+- has:
+    c:
+      type: math/constant
+- has:
+    expression_yaml:
+      type: str
+      value: |
+        math/algebra/operation/divide:
+          - math/algebra/operation/subtract:
+              - math/algebra/operation/negate:
+                  - b
+              - math/algebra/operation/sqrt:
+                  - math/algebra/operation/subtract:
+                      - math/algebra/operation/power:
+                          - b
+                          - 2
+                      - math/algebra/operation/multiply:
+                          - math/algebra/operation/multiply:
+                              - 4
+                              - a
+                          - c
+          - math/algebra/operation/multiply:
+              - 2
+              - a

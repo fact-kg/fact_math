@@ -1,0 +1,9 @@
+- is:
+    type: math/operation
+    as:
+      - math/operation:
+          arity:
+            value: 2
+- has:
+    python_impl:
+      type: computer/sw/lang/python/operator/divide

@@ -1,7 +1,7 @@
 - is:
     type: math/expression
 - has:
-    undefined_no_quadratic:
+    undefined_no_equation:
       type: math/function/domain/undefined
       value: |
         math/algebra/operation/and:
@@ -29,7 +29,7 @@
 - has:
     expression_str:
       type: str
-      value: "x = (-b - sqrt(b^2 - 4*a*c)) / (2*a)"
+      value: "if a==0: -c/b, else: (-b - sqrt(b^2 - 4*a*c)) / (2*a)"
 - has:
     a:
       type: math/constant
@@ -43,20 +43,31 @@
     expression_yaml:
       type: str
       value: |
-        math/algebra/operation/divide:
-          - math/algebra/operation/subtract:
-              - math/algebra/operation/negate:
-                  - b
-              - math/algebra/operation/sqrt:
-                  - math/algebra/operation/subtract:
-                      - math/algebra/operation/power:
-                          - b
-                          - 2
-                      - math/algebra/operation/multiply:
-                          - math/algebra/operation/multiply:
-                              - 4
-                              - a
-                          - c
-          - math/algebra/operation/multiply:
-              - 2
+        math/expression/conditional:
+          condition:
+            math/algebra/operation/equal:
               - a
+              - 0
+          then:
+            math/algebra/operation/divide:
+              - math/algebra/operation/negate:
+                  - c
+              - b
+          else:
+            math/algebra/operation/divide:
+              - math/algebra/operation/subtract:
+                  - math/algebra/operation/negate:
+                      - b
+                  - math/algebra/operation/sqrt:
+                      - math/algebra/operation/subtract:
+                          - math/algebra/operation/power:
+                              - b
+                              - 2
+                          - math/algebra/operation/multiply:
+                              - math/algebra/operation/multiply:
+                                  - 4
+                                  - a
+                              - c
+              - math/algebra/operation/multiply:
+                  - 2
+                  - a

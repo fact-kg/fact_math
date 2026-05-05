@@ -1,0 +1,42 @@
+- is:
+    type: math/expression
+- has:
+    expression_str:
+      type: str
+      value: "f(x) = a*x^3 + b*x^2 + c*x + d"
+- has:
+    x:
+      type: math/variable
+- has:
+    a:
+      type: math/constant
+- has:
+    b:
+      type: math/constant
+- has:
+    c:
+      type: math/constant
+- has:
+    d:
+      type: math/constant
+- has:
+    expression_yaml:
+      type: str
+      value: |
+        math/algebra/operation/add:
+          - math/algebra/operation/add:
+              - math/algebra/operation/add:
+                  - math/algebra/operation/multiply:
+                      - a
+                      - math/algebra/operation/power:
+                          - x
+                          - 3
+                  - math/algebra/operation/multiply:
+                      - b
+                      - math/algebra/operation/power:
+                          - x
+                          - 2
+              - math/algebra/operation/multiply:
+                  - c
+                  - x
+          - d

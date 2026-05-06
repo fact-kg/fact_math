@@ -1,0 +1,6 @@
+- is:
+    type: math/expression/indexed/sum
+    as:
+      - math/expression/indexed/sum:
+          accumulator:
+            value: math/algebra/operation/add

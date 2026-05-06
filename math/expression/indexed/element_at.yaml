@@ -1,0 +1,7 @@
+- is: access element from indexed collection
+- has:
+    collection:
+      type: str
+- has:
+    at:
+      type: str

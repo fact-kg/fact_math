@@ -1,0 +1,10 @@
+- is: iteration index variable
+- has:
+    name:
+      type: str
+- has:
+    from:
+      type: num
+- has:
+    to:
+      type: num

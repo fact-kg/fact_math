@@ -1,0 +1,28 @@
+- is:
+    type: math/expression
+- has:
+    expression_str:
+      type: str
+      value: "f(x) = Σ(i=0..n) coefficients[i] * x^i"
+- has:
+    x:
+      type: math/variable
+- has:
+    coefficients:
+      type: list
+- has:
+    expression_yaml:
+      type: str
+      value: |
+        math/algebra/expression/indexed/sum:
+          index: i
+          from: 0
+          to_length: coefficients
+          body:
+            math/algebra/operation/multiply:
+              - math/expression/indexed/element_at:
+                  collection: coefficients
+                  at: i
+              - math/algebra/operation/power:
+                  - x
+                  - i

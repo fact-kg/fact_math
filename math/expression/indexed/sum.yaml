@@ -1,0 +1,11 @@
+- is:
+    type: math/expression/indexed
+- has:
+    index:
+      type: math/expression/indexed/index
+- has:
+    accumulator:
+      type: math/operation
+- has:
+    body:
+      type: math/expression

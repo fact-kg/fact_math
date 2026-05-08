@@ -22,3 +22,73 @@
                 math/algebra/operation/divide:
                   - opposite
                   - hypotenuse
+- has:
+    expression_taylor:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "sin(x) = Σ (-1)^n * x^(2n+1) / (2n+1)!"
+            expression_yaml:
+              value: |
+                # FIXME TODO: needs factorial operation
+                math/algebra/expression/indexed/sum:
+                  index: n
+                  from: 0
+                  to: infinity
+                  body:
+                    math/algebra/operation/divide:
+                      - math/algebra/operation/multiply:
+                          - math/algebra/operation/power:
+                              - -1
+                              - n
+                          - math/algebra/operation/power:
+                              - x
+                              - FIXME_2n_plus_1
+                      - FIXME_factorial_2n_plus_1
+- has:
+    expression_euler:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "sin(x) = (e^(ix) - e^(-ix)) / 2i"
+            expression_yaml:
+              value: |
+                # FIXME TODO: needs complex numbers, imaginary unit i, exp function
+                math/algebra/operation/divide:
+                  - math/algebra/operation/subtract:
+                      - FIXME_exp_ix
+                      - FIXME_exp_neg_ix
+                  - FIXME_2i
+- has:
+    expression_unit_circle:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "sin(x) = y-coordinate of point on unit circle at angle x"
+            expression_yaml:
+              value: |
+                # FIXME TODO: needs unit circle concept, coordinate extraction
+                FIXME_unit_circle_y_at_angle:
+                  - x
+- has:
+    expression_differential:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "y'' + y = 0, y(0) = 0, y'(0) = 1"
+            expression_yaml:
+              value: |
+                # FIXME TODO: needs differential equation concept, initial conditions
+                FIXME_differential_equation:
+                  equation:
+                    math/algebra/operation/add:
+                      - FIXME_second_derivative_y
+                      - y
+                  equals: 0
+                  initial_conditions:
+                    - y_at_0: 0
+                    - y_prime_at_0: 1

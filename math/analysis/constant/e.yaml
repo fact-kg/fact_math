@@ -1,0 +1,38 @@
+- is:
+    type: math/constant
+    as:
+      - math/constant:
+          value:
+            value: 2.718281828459045
+- is:
+    type: math/expression
+- has:
+    wikipedia_url:
+      type: computer/sw/url
+      value: "https://simple.wikipedia.org/wiki/E_(mathematical_constant)"
+- has:
+    betterexplained_url:
+      type: computer/sw/url
+      value: "https://betterexplained.com/articles/an-intuitive-guide-to-exponential-functions-e/"
+- has:
+    expression_str:
+      type: str
+      value: "e = lim(n->inf) (1 + 1/n)^n"
+- has:
+    n:
+      type: math/variable
+- has:
+    expression_yaml:
+      type: str
+      value: |
+        math/analysis/real/calculus/expression/limit:
+          variable: n
+          to: infinity
+          body:
+            math/algebra/operation/power:
+              - math/algebra/operation/add:
+                  - 1
+                  - math/algebra/operation/divide:
+                      - 1
+                      - n
+              - n

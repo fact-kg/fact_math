@@ -1,10 +1,6 @@
 - is:
     type: math/expression
 - has:
-    expression_str:
-      type: str
-      value: "f(x) = a*x^2 + b*x + c"
-- has:
     x:
       type: math/variable
 - has:
@@ -17,17 +13,22 @@
     c:
       type: math/constant
 - has:
-    expression_yaml:
-      type: str
-      value: |
-        math/algebra/operation/add:
-          - math/algebra/operation/add:
-              - math/algebra/operation/multiply:
-                  - a
-                  - math/algebra/operation/power:
-                      - x
-                      - 2
-              - math/algebra/operation/multiply:
-                  - b
-                  - x
-          - c
+    expression:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "f(x) = a*x^2 + b*x + c"
+            expression_yaml:
+              value: |
+                math/algebra/operation/add:
+                  - math/algebra/operation/add:
+                      - math/algebra/operation/multiply:
+                          - a
+                          - math/algebra/operation/power:
+                              - x
+                              - 2
+                      - math/algebra/operation/multiply:
+                          - b
+                          - x
+                  - c

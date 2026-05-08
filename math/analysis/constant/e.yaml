@@ -15,24 +15,25 @@
       type: computer/sw/url
       value: "https://betterexplained.com/articles/an-intuitive-guide-to-exponential-functions-e/"
 - has:
-    expression_str:
-      type: str
-      value: "e = lim(n->inf) (1 + 1/n)^n"
-- has:
     n:
       type: math/variable
 - has:
-    expression_yaml:
-      type: str
-      value: |
-        math/analysis/real/calculus/expression/limit:
-          variable: n
-          to: infinity
-          body:
-            math/algebra/operation/power:
-              - math/algebra/operation/add:
-                  - 1
-                  - math/algebra/operation/divide:
-                      - 1
+    expression_limit:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "e = lim(n->inf) (1 + 1/n)^n"
+            expression_yaml:
+              value: |
+                math/analysis/real/calculus/expression/limit:
+                  variable: n
+                  to: infinity
+                  body:
+                    math/algebra/operation/power:
+                      - math/algebra/operation/add:
+                          - 1
+                          - math/algebra/operation/divide:
+                              - 1
+                              - n
                       - n
-              - n

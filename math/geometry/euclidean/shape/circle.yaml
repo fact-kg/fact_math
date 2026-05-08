@@ -1,0 +1,7 @@
+- is: circle
+- has:
+    circumference:
+      type: math/geometry/euclidean/shape/circle/circumference
+- has:
+    diameter:
+      type: math/geometry/euclidean/shape/circle/diameter

@@ -1,0 +1,24 @@
+- is:
+    type: math/function
+- has:
+    x:
+      type: math/variable
+- has:
+    python_impl:
+      type: computer/sw/lang/python/function/sin
+- has:
+    wikipedia_url:
+      type: computer/sw/url
+      value: "https://en.wikipedia.org/wiki/Sine_and_cosine"
+- has:
+    expression_geometric:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "sin(x) = opposite / hypotenuse"
+            expression_yaml:
+              value: |
+                math/algebra/operation/divide:
+                  - opposite
+                  - hypotenuse

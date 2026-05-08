@@ -1,0 +1,30 @@
+- is:
+    type: math/constant
+    as:
+      - math/constant:
+          value:
+            value: 3.141592653589793
+- is:
+    type: math/expression
+- has:
+    wikipedia_url:
+      type: computer/sw/url
+      value: "https://en.wikipedia.org/wiki/Pi"
+- has:
+    circumference:
+      type: math/geometry/euclidean/shape/circle/circumference
+- has:
+    diameter:
+      type: math/geometry/euclidean/shape/circle/diameter
+- has:
+    expression_geometric:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "pi = C / d, ratio of circumference to diameter of a circle"
+            expression_yaml:
+              value: |
+                math/algebra/operation/divide:
+                  - circumference
+                  - diameter

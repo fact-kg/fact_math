@@ -8,20 +8,21 @@
           - a
           - 0
 - has:
-    expression_str:
-      type: str
-      value: "x = -b/a"
-- has:
     a:
       type: math/constant
 - has:
     b:
       type: math/constant
 - has:
-    expression_yaml:
-      type: str
-      value: |
-        math/algebra/operation/divide:
-          - math/algebra/operation/negate:
-              - b
-          - a
+    expression:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "x = -b/a"
+            expression_yaml:
+              value: |
+                math/algebra/operation/divide:
+                  - math/algebra/operation/negate:
+                      - b
+                  - a

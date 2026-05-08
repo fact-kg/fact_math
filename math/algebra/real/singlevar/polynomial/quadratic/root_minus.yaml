@@ -27,10 +27,6 @@
                   - c
           - 0
 - has:
-    expression_str:
-      type: str
-      value: "if a==0: -c/b, else: (-b - sqrt(b^2 - 4*a*c)) / (2*a)"
-- has:
     a:
       type: math/constant
 - has:
@@ -40,34 +36,39 @@
     c:
       type: math/constant
 - has:
-    expression_yaml:
-      type: str
-      value: |
-        math/expression/conditional:
-          condition:
-            math/algebra/operation/equal:
-              - a
-              - 0
-          then:
-            math/algebra/operation/divide:
-              - math/algebra/operation/negate:
-                  - c
-              - b
-          else:
-            math/algebra/operation/divide:
-              - math/algebra/operation/subtract:
-                  - math/algebra/operation/negate:
+    expression:
+      type: math/expression
+      as:
+        - math/expression:
+            expression_str:
+              value: "if a==0: -c/b, else: (-b - sqrt(b^2 - 4*a*c)) / (2*a)"
+            expression_yaml:
+              value: |
+                math/expression/conditional:
+                  condition:
+                    math/algebra/operation/equal:
+                      - a
+                      - 0
+                  then:
+                    math/algebra/operation/divide:
+                      - math/algebra/operation/negate:
+                          - c
                       - b
-                  - math/algebra/operation/sqrt:
+                  else:
+                    math/algebra/operation/divide:
                       - math/algebra/operation/subtract:
-                          - math/algebra/operation/power:
+                          - math/algebra/operation/negate:
                               - b
-                              - 2
-                          - math/algebra/operation/multiply:
-                              - math/algebra/operation/multiply:
-                                  - 4
-                                  - a
-                              - c
-              - math/algebra/operation/multiply:
-                  - 2
-                  - a
+                          - math/algebra/operation/sqrt:
+                              - math/algebra/operation/subtract:
+                                  - math/algebra/operation/power:
+                                      - b
+                                      - 2
+                                  - math/algebra/operation/multiply:
+                                      - math/algebra/operation/multiply:
+                                          - 4
+                                          - a
+                                      - c
+                      - math/algebra/operation/multiply:
+                          - 2
+                          - a

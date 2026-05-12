@@ -1,0 +1,30 @@
+- is:
+    type: computer/test/case
+    as:
+      - computer/test/case:
+          description:
+            value: "f(2) = 1*4 + 0*2 + (-1) = 3"
+          subject:
+            value: computer/algorithm/evaluate_expression_and_return
+          expected_result:
+            value: 3
+- has:
+    expression_fact:
+      type: str
+      value: "math/algebra/real/singlevar/polynomial/quadratic"
+- has:
+    x:
+      type: num
+      value: 2
+- has:
+    a:
+      type: num
+      value: 1
+- has:
+    b:
+      type: num
+      value: 0
+- has:
+    c:
+      type: num
+      value: -1

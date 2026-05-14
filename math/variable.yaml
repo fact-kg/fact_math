@@ -1,1 +1,4 @@
 - is: mathematical variable
+- has:
+    description:
+      type: str
